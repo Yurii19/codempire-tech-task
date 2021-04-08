@@ -1,7 +1,7 @@
 const Display = (props) => {
   return (
     <div className="display">
-      <span className="memory">{props.memory}</span>
+      <span className="memory">m:<b>{props.memory}</b></span>
       <span>{props.value}</span>
     </div>
   );

@@ -54,8 +54,11 @@
   display: flex;
 }
 .memory {
-  color: blue;
+  /* color: blue; */
   text-align: left;
   border-bottom: 1px solid black;
   height: 20px;
+}
+.memory > b {
+  color: blue;
 }
