@@ -20,18 +20,18 @@ export const buttonsHandler = (
   currentValue: string
 ): string => {
   const delimiters = /[/,x,\-,+]/g;
+  const paternPercent = /\d+[/,x,\-,+]\d+$/;
   if (/^\d$/.test(buttonValue) || /^[/,x,\-,+,.]$/.test(buttonValue)) {
     return currentValue + buttonValue;
   }
   if (buttonValue === "AC") return "";
   if (buttonValue === "=") {
-    if (currentValue === "") return "error";
+    if (currentValue === "") return "";
     const conditions: string[] = getCoditions(currentValue);
     const res = calculator(conditions);
     return res.toString();
   }
   if (buttonValue === "%") {
-    const paternPercent = /\d+[/,x,\-,+]\d+$/;
     const lastOperation = currentValue.match(paternPercent);
     if (lastOperation) {
       const operands = lastOperation[0].split(delimiters);
@@ -43,7 +43,6 @@ export const buttonsHandler = (
   if (buttonValue === "+/-") {
     if (currentValue.match(/^-?\d+$/)) {
       const res = +currentValue * -1;
-      console.log("-> " + res);
       return res.toString();
     } else {
       return currentValue;

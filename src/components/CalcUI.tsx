@@ -19,7 +19,7 @@ const CalcUI = () => {
             setMvalue("0");
             return;
           case "m-":
-            if (value === "" || !value.match(expRegex)) return;
+            if (value.match(expRegex)) return;
             setMvalue((+mValue - +value).toString());
             return;
           case "m+":
@@ -35,7 +35,7 @@ const CalcUI = () => {
           node.parentNode.classList.contains("calc-button") ||
           node.classList.contains("calc-button")
         ) {
-          setValue(buttonsHandler(node.innerText, value, mValue));
+          setValue(buttonsHandler(node.innerText, value));
         }
       }}
     >
