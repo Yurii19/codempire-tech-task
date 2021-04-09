@@ -47,9 +47,6 @@
 .calc-button:active {
   box-shadow: inset 0px 0px 5px 0px #000000;
 }
-.colorGrey {
-  background-color: rgb(160, 159, 157);
-}
 .row {
   display: flex;
 }

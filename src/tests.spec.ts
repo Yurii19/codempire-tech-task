@@ -1,5 +1,4 @@
 import { calculator } from "./calculator";
-import { testGenerator } from "./testGenerator";
 
 describe("tests for calculator function", () => {
   it("2 + 11 should be 13", () => {
@@ -26,8 +25,4 @@ describe("tests for calculator function", () => {
     expect(result).toBe("16");
   });
 
-  // it("test generator", () => {
-  //   const result = testGenerator(7);
-  //   expect(result).toBe(6);
-  // });
 });
