@@ -73,5 +73,6 @@ export function calculator(conditions: string[]): string {
   temp = multiplication(temp);
   temp = subtraction(temp);
   temp = addititon(temp);
+  console.log(temp[0]);
   return temp[0];
 }

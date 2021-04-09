@@ -9,6 +9,7 @@ const CalcUI = () => {
     <div
       className="calc-body"
       onClick={(ev) => {
+        const expRegex = /^-?\d+\.?\d+?$/;
         const node = ev.target;
         switch (node.innerText) {
           case "mr":
@@ -18,10 +19,14 @@ const CalcUI = () => {
             setMvalue("0");
             return;
           case "m-":
-            if (value === "") return;
+            if (value === "" || !value.match(expRegex)) return;
             setMvalue((+mValue - +value).toString());
             return;
           case "m+":
+            if (!value.match(expRegex)) {
+              setMvalue((+mValue + +value).toString());
+              return;
+            }
             if (value === "") return;
             setMvalue((+mValue + +value).toString());
             return;

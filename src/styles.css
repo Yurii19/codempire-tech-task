@@ -54,7 +54,7 @@
   display: flex;
 }
 .memory {
-  /* color: blue; */
+  font-size: 0.9em;
   text-align: left;
   border-bottom: 1px solid black;
   height: 20px;

@@ -1,4 +1,4 @@
-function getRandom(min, max, isFloat?: boolean) {
+function getRandom(min: number, max: number, isFloat?: boolean) {
   min = isFloat ? min : Math.ceil(min);
   max = isFloat ? max : Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min; //Максимум не включается, минимум включается

@@ -1,7 +1,7 @@
 import { calculator } from "./calculator";
 
 function getCoditions(display: string): string[] {
-  const delimiters = /[/,x,\-,+]/g;
+  const delimiters = /(?<=\d+)[/,x,\-,+]/g;
   const operators = display.match(delimiters);
   const operands = display.split(delimiters);
   let conditions: string[] = [];
